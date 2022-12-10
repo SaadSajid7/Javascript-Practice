@@ -12,28 +12,37 @@
     <title>Javascript Timer</title>
   </head>
   <body>
-    <div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="container position-absolute top-50 start-50 translate-middle hide" id="timer">
       <div class="row justify-content-center align-items-center">
         <div class="col-md-5 text-center rounded-4">
-          <h1 class="py-4">Timer</h1>
-          <h6>
-            <span id="hour">00</span> : <span id="min">00</span> :
-            <span id="sec">00</span>
-          </h6>
+          <h1 class="pb-2 pt-4 m-0">Timer</h1>
+          <h6 id="display">00 : 00 : 00</h6>
           <div class="row justify-content-center align-items-center">
-            <select class="col-md-3 rounded me-3" name="" id="hourMenu">
-              <option value="Hours" selected hidden>Hours</option>
+            <select oninput="displayTime()" class="col-md-3 rounded me-3" name="" id="hourMenu">
+              <option value="00" selected hidden>00</option>
             </select>
-            <select class="col-md-3 rounded me-3" name="" id="minMenu">
-              <option value="Minutes" selected hidden>Minutes</option>
+            <select oninput="displayTime()" class="col-md-3 rounded me-3" name="" id="minMenu">
+              <option value="00" selected hidden>00</option>
             </select>
-            <select class="col-md-3 rounded" name="" id="secMenu">
-              <option value="Seconds" selected hidden>Seconds</option>
+            <select oninput="displayTime()" class="col-md-3 rounded" name="" id="secMenu">
+              <option value="00" selected hidden>00</option>
             </select>
           </div>
-          <button class="btn btn-primary my-4 px-4 fs-4" id="startBtn" onclick="onchanges()">
-            Start
-          </button>
+          <button class="btn btn-success my-4 px-4 fs-4" id="startBtn" onclick="startTimer()">Start</button>
+          <button class="btn btn-danger my-4 px-4 fs-4" id="resetBtn" disabled>Reset</button>
+          <button class="btn btn-danger mb-4 px-4 fs-4 col-md-9" id="switchWatch">StopWatch</button>
+        </div>
+      </div>
+    </div>
+    <div class="container position-absolute top-50 start-50 translate-middle" id="stopwatch">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-5 text-center rounded-4">
+          <h1 class="py-4 m-0">StopWatch</h1>
+          <h6><span id="hour">00</span> : <span id="min">00</span> : <span id="sec">00</span></h6>
+          <button class="btn btn-success my-4 px-4 fs-4" id="startsBtn" onclick="startWatch()">Start</button>
+          <button class="btn btn-danger my-4 px-4 fs-4" id="resetsBtn" disabled onclick="resetWatch()">Reset</button>
+          <button class="btn btn-primary my-4 px-4 fs-4" id="pausesBtn" disabled onclick="pauseWatch()">Pause</button>
+          <button class="btn btn-danger mb-4 px-4 fs-4 col-md-9" id="switchTimer">Timer</button>
         </div>
       </div>
     </div>
