@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: blue;
+}
+
+.col-md-5{
+  background: #fff;
+  padding: 0 70px;
+}
+
+h6{
+  height: 100px;
+  font-size: 75px;
+  padding-bottom: 5px;
+}
+
+.col-md-3{
+  font-size: 19px;
+  padding: 5px;
+}
