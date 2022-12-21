@@ -11,37 +11,31 @@
   <title>Quiz App</title>
 </head>
 <body class="bg-secondary bg-opacity-10">
-  
   <div class="container-fluid pt-3">
     <div class="row align-items-center justify-content-between">
-        <p class="px-md-5 col-6">Question: <b>1</b> out of <b>10</b></p>
+        <p class="px-md-5 col-6" id="questionNo">Question: <b></b> out of <b></b></p>
         <p class="px-md-5 col-6 text-end">Time: <b>60 sec</b></p>
     </div>
-    <div class="row">
-      <p class="fs-4 fw-bold bg-secondary bg-opacity-75 py-5 px-3 text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quam?</p>
+    <div class="row displayQuestion">
+      <p class="fs-4 fw-bold bg-secondary bg-opacity-75 py-5 px-3 text-white text-center" id="quest"></p>
     </div>
-    <div class="row align-items-center justify-content-evenly px-3">
-      <div class="fs-4 py-3 bg-danger bg-opacity-50 rounded my-2">
-        <input type="radio" name="option" id="option1">
-        <label for="option1" style="--clr: #f00">Lorem, ipsum dolor.</label>
-      </div>
-      <div class="fs-4 py-3 bg-success bg-opacity-50 rounded my-2">
-        <input type="radio" name="option" id="option2">
-        <label for="option2" style="--clr: #008000">Lorem, ipsum dolor.</label>
-      </div>
-      <div class="fs-4 py-3 bg-warning bg-opacity-50 rounded my-2">
-        <input type="radio" name="option" id="option3">
-        <label for="option3" style="--clr: #ffa500">Lorem, ipsum dolor.</label>
-        </div>
-      <div class="fs-4 py-3 bg-info bg-opacity-50 rounded my-2">
-        <input type="radio" name="option" id="option4">
-        <label for="option4" style="--clr: #00f">Lorem, ipsum dolor.</label>
-      </div>
+    <div class="row align-items-center justify-content-evenly px-3" name="option" id="ansParent">
     </div>
     <div class="text-center">
-      <button class="btn btn-success col-md-2 col-4 rounded-pill fs-4 mt-4">Next</button>
+      <button class="btn btn-success col-md-2 col-4 rounded-pill fs-4 mt-4" id="nxtBtn" onclick="nextQuestion()">Next</button>
+    </div>
+    <div class="row align-items-center justify-content-between">
+      <div>
+        <p id="marks">Marks : </p>
+      </div>
+      <div>
+        <p id="percentage">Percentage : </p>
+      </div>
     </div>
   </div>
 
+
+  <!-- marks and percentage at the end of the quiz  -->
+ <script src="app.js"></script>
 </body>
 </html>
