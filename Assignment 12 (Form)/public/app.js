@@ -55,7 +55,7 @@ function getData() {
     arr.push(dt.val())
     parent.innerHTML = ''
     for (var i = 0; i < arr.length; i++) {
-      parent.innerHTML += `<div class="shadow p-5 mb-3">
+      parent.innerHTML += `<div class="shadow p-5 mt-3">
       <p>Name: ${arr[i].name}</p>
       <p>Email: ${arr[i].email}</p>
       <p>Contact: ${arr[i].contact}</p>
