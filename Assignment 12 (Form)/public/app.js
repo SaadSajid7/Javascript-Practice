@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getDatabase, ref, set, onChildAdded } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,32 +16,51 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const database = getDatabase()
+const database = getDatabase();
 
-var a = document.getElementById('task')
-var titleinp = document.getElementById('title')
-var parent = document.getElementById('parent')
+var name = document.getElementById('name');
+var email = document.getElementById('email');
+var contact = document.getElementById('contact');
+var password = document.getElementById('password');
+var parent = document.getElementById('parent');
+var btn = document.getElementById('btn');
 
-window.saveTask = function () {
-  var obj = {
-    task: a.value,
-    title: titleinp.value,
+btn.addEventListener('click', () => {
+  if (!name.value || !email.value || !contact.value || !password.value) {
+    alert("Please Fill all the Form");
   }
-  obj.id = Math.random().toString().slice(2)
-  let reference = ref(database, `tasks/${obj.id}/`)
-  set(reference, obj)
-  console.log(obj)
-}
+  else {
+    var obj = {
+      name: name.value,
+      email: email.value,
+      contact: contact.value,
+      password: password.value,
+    }
+    obj.id = Math.random().toString().slice(2)
+    let reference = ref(database, `users/${obj.id}/`)
+    set(reference, obj)
+      .then(() => {
+        alert("Added");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }
+})
 
 function getData() {
-  let reference = ref(database, 'task/')
+  let reference = ref(database, 'users/')
   let arr = []
   onChildAdded(reference, function (dt) {
     arr.push(dt.val())
-    console.log(arr)
     parent.innerHTML = ''
     for (var i = 0; i < arr.length; i++) {
-      parent.innerHTML += `<li>${arr[i].task} </li>`
+      parent.innerHTML += `<div class="shadow p-5 mb-3">
+      <p>Name: ${arr[i].name}</p>
+      <p>Email: ${arr[i].email}</p>
+      <p>Contact: ${arr[i].contact}</p>
+      <p>Password: ${arr[i].password}</p>
+      </div>`;
     }
   })
 }

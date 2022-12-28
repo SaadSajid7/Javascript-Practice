@@ -12,10 +12,6 @@
 <body>
 
   <div class="container p-5">
-    <form class="d-flex col-md-5 mx-auto" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
     <h1 class="text-center my-3">Add Data</h1>
     <form class="mx-md-5 px-md-5">
       <div class="mb-3">
@@ -34,18 +30,16 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" required minlength="6">
       </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+        <button type="submit" class="btn btn-primary" id="btn">Submit</button>
     </form>
     <section>
-      <div class="row">
-        
+      <div id="parent">
       </div>
     </section>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 
 </html>
