@@ -72,7 +72,7 @@ function getData() {
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                      <input type="text" id="editor" placeholder="Enter Edit Text" class="w-100">
+                                      <input type="text" id="editor" onchange="addStorage(this.value)" placeholder="Enter Edit Text" class="w-100">
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -88,6 +88,10 @@ function getData() {
 
 getData();
 
+window.addStorage = function(txt) {
+  sessionStorage.setItem("txt", txt)
+}
+
 window.deleteElem = function(elem) {
   let reference = ref(database, `list/${elem}`);
   remove(reference)
@@ -102,7 +106,7 @@ window.deleteElem = function(elem) {
 
 window.editElem = function(elem) {
   var obj = {
-    todo: input.value,
+    todo: sessionStorage.txt,
   };
   let reference = ref(database, `list/${elem}`);
   update(reference, obj)
