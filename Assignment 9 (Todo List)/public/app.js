@@ -28,6 +28,8 @@ const database = getDatabase();
 
 var input = document.getElementById("input");
 var mainList = document.getElementById("mainList");
+var loader = document.getElementById("loader");
+var container = document.getElementById("container");
 
 
 function makeid(length) {
@@ -64,6 +66,8 @@ function getData() {
   let arr = [];
   onChildAdded(reference, function (dt) {
     arr.push(dt.val());
+    container.style.display = "block";
+    loader.style.display = "none";
     mainList.innerHTML = "";
     for (var i = 0; i < arr.length; i++) {
       mainList.innerHTML += `<li class="shadow-sm p-2 mt-3 d-flex justify-content-between align-items-center fs-5 text-break" id="li">
