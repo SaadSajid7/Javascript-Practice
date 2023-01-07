@@ -1,6 +1,3 @@
-var input = document.getElementById("input");
-var mainList = document.getElementById("mainList");
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
@@ -28,6 +25,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const database = getDatabase();
+
+var input = document.getElementById("input");
+var mainList = document.getElementById("mainList");
+
 
 function makeid(length) {
   var result           = '';

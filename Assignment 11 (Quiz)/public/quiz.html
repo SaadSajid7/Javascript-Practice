@@ -12,10 +12,11 @@
 </head>
 
 <body class="bg-secondary bg-opacity-10">
+  <img src="loader.gif" alt="" id="loader">
   <div class="progress" style="background: #fff; height: 5px;">
     <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
   </div>
-  <div class="container-fluid pt-3">
+  <div class="container-fluid pt-3" id="container" style="display: none;">
     <div class="row align-items-center justify-content-between">
       <p class="px-md-5 col-6" id="questionNo">Question: 0 out of 0</p>
     </div>
@@ -23,10 +24,10 @@
       <p class="fs-4 fw-bold bg-secondary bg-opacity-75 py-5 px-3 text-white text-center" id="quest"></p>
     </div>
     <div class="row px-3" id="ansParent">
-      <button class="fs-4 py-3 bg-danger bg-opacity-50 rounded my-2 text-start" id="option1" onclick="checkDiv(option1);checkQuestion(option1);"></button>
-      <button class="fs-4 py-3 bg-success bg-opacity-50 rounded my-2 text-start" id="option2" onclick="checkDiv(option2);checkQuestion(option2);"></button>
-      <button class="fs-4 py-3 bg-warning bg-opacity-50 rounded my-2 text-start" id="option3" onclick="checkDiv(option3);checkQuestion(option3);"></button>
-      <button class="fs-4 py-3 bg-primary bg-opacity-50 rounded my-2 text-start" id="option4" onclick="checkDiv(option4);checkQuestion(option4);"></button>
+      <button class="fs-4 py-3 bg-danger bg-opacity-50 rounded my-2 text-start" id="option1" onclick="checkDiv();checkQuestion(option1);"></button>
+      <button class="fs-4 py-3 bg-success bg-opacity-50 rounded my-2 text-start" id="option2" onclick="checkDiv();checkQuestion(option2);"></button>
+      <button class="fs-4 py-3 bg-warning bg-opacity-50 rounded my-2 text-start" id="option3" onclick="checkDiv();checkQuestion(option3);"></button>
+      <button class="fs-4 py-3 bg-primary bg-opacity-50 rounded my-2 text-start" id="option4" onclick="checkDiv();checkQuestion(option4);"></button>
     </div>
     <div class="text-center">
       <button class="btn btn-success col-md-2 col-4 rounded-pill fs-4 mt-4" id="nxtBtn"
@@ -34,12 +35,12 @@
     </div>
   </div>
   <!-- Remarks Modal -->
-  <div class="modal fade" id="endModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal fade" id="endModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="modalLabel">Result</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" aria-label="Close" onclick="location.replace('./index.html')"></button>
         </div>
         <div class="modal-body text-center">
           <h2 id="remarks"></h2>
@@ -49,7 +50,7 @@
         </div>
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-secondary" onclick="location.replace('./index.html')">Close</button>
-          <button type="button" class="btn btn-primary" onclick="location.replace('./index.html')">Retake</button>
+          <button type="button" class="btn btn-primary" onclick="location.reload()">Retake</button>
         </div>
       </div>
     </div>

@@ -33,9 +33,6 @@ const auth = getAuth();
 
 var email = document.getElementById("email");
 var password = document.getElementById("password");
-const inputName = document.getElementById("inputName");
-const name = document.getElementById("name");
-
 
 window.loginUser = function () {
   var obj = {

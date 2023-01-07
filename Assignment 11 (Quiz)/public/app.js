@@ -1,76 +1,8 @@
-// var questions = [
-//   {
-//     question: "HTML stands for: ",
-//     options: [
-//       "Hyper Text Markup Language",
-//       "Hexa Text Markup Language",
-//       "Hexa Text Mockup Language",
-//       "Hyper Text Mockup Language",
-//     ],
-//     correctAnswer: "Hyper Text Markup Language",
-//   },
-//   {
-//     question: "CSS stands for: ",
-//     options: [
-//       "Colour Style Sheet",
-//       "Cascading Style Sheet",
-//       "Cascading Sheet Style",
-//       "Colour Sheet Style",
-//     ],
-//     correctAnswer: "Cascading Style Sheet",
-//   },
-//   {
-//     question: "The valid format of MS Word is __",
-//     correctAnswer: ".doc",
-//     options: [".exe", ".doc", ".png", " .jpeg"],
-//   },
-//   {
-//     question: "What program is used in MS-Word to check the spelling?",
-//     correctAnswer: "Spelling & Grammar",
-//     options: ["Research", "Word Count", "Set language", "Spelling & Grammar"],
-//   },
-//   {
-//     question: "A word gets selected by clicking it",
-//     correctAnswer: "Twice",
-//     options: [" Once", "Twice", "Three times", "Four times"],
-//   },
-//   {
-//     question: "The center the selected text, the shortcut key is",
-//     correctAnswer: "Ctrl + E",
-//     options: ["Ctrl + C", "Ctrl + E", " Ctrl + U", "Ctrl + O"],
-//   },
-//   {
-//     question: "Which option is not available in Microsoft office button?",
-//     correctAnswer: "Bold",
-//     options: ["Bold", "New", "Save", "Open"],
-//   },
-// ];
-
-var indexNum = 0;
-var questionNo = document.getElementById("questionNo");
-const options1 = document.getElementById("option1");
-const options2 = document.getElementById("option2");
-const options3 = document.getElementById("option3");
-const options4 = document.getElementById("option4");
-const ansParent = document.getElementById("ansParent");
-var quest = document.getElementById("quest");
-var marks = document.getElementById("marks");
-var percentage = document.getElementById("percentage");
-var nextBtn = document.getElementById("nxtBtn");
-var remarks = document.getElementById("remarks");
-var progressBar = document.getElementById("progressBar");
-
-// progress bar include and (marks and percentage at the end of the quiz)
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
   getDatabase,
   ref,
-  set,
-  onValue,
-  get,
-  child,
   onChildAdded,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -89,13 +21,23 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const database = getDatabase();
 
-var name = document.getElementById("name");
-const inputName = document.getElementById("inputName");
-
-
+var indexNum = 0;
+var questionNo = document.getElementById("questionNo");
+const options1 = document.getElementById("option1");
+const options2 = document.getElementById("option2");
+const options3 = document.getElementById("option3");
+const options4 = document.getElementById("option4");
+const ansParent = document.getElementById("ansParent");
+var quest = document.getElementById("quest");
+var marks = document.getElementById("marks");
+var percentage = document.getElementById("percentage");
+var nextBtn = document.getElementById("nxtBtn");
+var remarks = document.getElementById("remarks");
+var progressBar = document.getElementById("progressBar");
+var loader = document.getElementById("loader");
+var container = document.getElementById("container");
 
 
 var questionsArr = [];
@@ -104,6 +46,8 @@ const getData = () => {
   onChildAdded(reference, function (dt) {
     questionsArr.push(dt.val());
     renderQuestion();
+    container.style.display = "block";
+    loader.style.display = "none";
   });
 };
 
@@ -125,7 +69,7 @@ window.nextQuestion = function () {
   }
 };
 
-window.checkDiv = function (userValue) {
+window.checkDiv = function () {
   options1.disabled = true;
   options2.disabled = true;
   options3.disabled = true;
@@ -134,9 +78,7 @@ window.checkDiv = function (userValue) {
 
 function renderQuestion() {
   var currentQuestion = questionsArr[indexNum];
-  questionNo.innerHTML = `Question: ${indexNum + 1} out of ${
-    questionsArr.length
-  }`;
+  questionNo.innerHTML = `Question: ${indexNum + 1} out of ${questionsArr.length}`;
   quest.innerHTML = currentQuestion.question;
   options1.innerHTML = currentQuestion.options["option1"];
   options2.innerHTML = currentQuestion.options["option2"];
@@ -164,7 +106,7 @@ window.checkQuestion = function (userValue) {
   if (userValue.innerHTML === currentQuestion.correctAns) {
     userValue.classList.add("correctAnswer");
     mark++;
-    marks.innerHTML = "Marks: " + mark;
+    marks.innerHTML = "Marks: " + mark+ "/" +questionsArr.length;
     var percent = ((mark / questionsArr.length) * 100).toFixed(0);
     percentage.innerHTML = "Percentage: " + percent + "%";
   } else {
@@ -179,10 +121,11 @@ window.checkQuestion = function (userValue) {
     nextBtn.setAttribute("data-bs-toggle", "modal");
     nextBtn.setAttribute("data-bs-target", "#endModal");
     if (percent >= 70) {
-      remarks.innerHTML = `Congratulations!`;
+      remarks.innerHTML = "Congratulations!";
+      remarks.style.color = "green";
     } else {
       remarks.innerHTML = "Hard Luck!";
-      
+      remarks.style.color = "red";
     }
   }
 };
