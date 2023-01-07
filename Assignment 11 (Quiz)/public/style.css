@@ -1,0 +1,21 @@
+.correctAnswer::after{
+  content: '\f058';
+  font-family: fontAwesome;
+  color: green;
+  float: right;
+  font-size: 24px;
+  padding-right: 10px;
+}
+
+.wrongAnswer::after{
+  content: '\f057';
+  font-family: fontAwesome;
+  color: red;
+  float: right;
+  font-size: 24px;
+  padding-right: 10px;
+}
+
+#option1:disabled, #option2:disabled, #option3:disabled, #option4:disabled{
+  color: black;
+} 

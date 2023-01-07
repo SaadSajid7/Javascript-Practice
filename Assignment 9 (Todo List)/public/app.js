@@ -29,9 +29,6 @@ const app = initializeApp(firebaseConfig);
 
 const database = getDatabase();
 
-const addBtn = document.getElementById("add-btn");
-const deleteAll = document.getElementById("deleteAll");
-
 function makeid(length) {
   var result           = '';
   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -42,14 +39,14 @@ function makeid(length) {
   return result;
 }
 
-addBtn.addEventListener("click", () => {
+window.addBtn = function() {
   if (!input.value) {
     alert("Enter Something");
   } else {
     var obj = {
       todo: input.value,
     };
-    // obj.id = makeid(9);
+    obj.id = makeid(9);
     let reference = ref(database, `list/${obj.id}/`);
     set(reference, obj)
       .then(() => {
@@ -59,7 +56,7 @@ addBtn.addEventListener("click", () => {
         alert(error);
       });
   }
-});
+};
 
 function getData() {
   let reference = ref(database, "list/");
@@ -134,7 +131,7 @@ window.editElem = function (elem) {
   }
 };
 
-deleteAll.addEventListener("click", () => {
+window.deleteAll = function() {
   let reference = ref(database, `list/`);
   remove(reference)
     .then(() => {
@@ -144,4 +141,4 @@ deleteAll.addEventListener("click", () => {
     .catch((error) => {
       alert(error);
     });
-});
+};
