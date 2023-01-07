@@ -48,7 +48,6 @@ window.addQuestion = function() {
       correctAns: correctAns.value
     };
     obj.id = Math.floor(Math.random() * 90000000000);
-    console.log(obj.id)
     let reference = ref(database, `questions/${obj.id}/`);
     set(reference, obj)
       .then(() => {
