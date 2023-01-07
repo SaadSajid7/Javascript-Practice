@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results for</title>
+    <link rel="stylesheet" href="../css/search.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <section class="search-results">
+      <h1 class="heading">search results for <span id="search-key"></span></h1>
+      <section class="recipe-container"></section>
+    </section>
+
+    <footer></footer>
+
+    <div id="signup"></div>
+    <div id="login"></div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+  <script src="../js/home.js"></script>
+    <script>
+      const searchKey = decodeURI(location.pathname.split("/").pop());
+
+      const searchSpanElement = document.querySelector("#search-key");
+      searchSpanElement.innerHTML = searchKey;
+
+      getRecipes(searchKey).then((data) =>
+        createRecipes(data, ".recipe-container")
+      );
+    </script>
+    <script
+      src="https://kit.fontawesome.com/a27ca3d52c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

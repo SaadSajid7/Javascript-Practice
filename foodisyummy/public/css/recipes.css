@@ -1,0 +1,17 @@
+body{
+  background: #fff !important;
+}
+
+.filter1, .filter2, .filter3, .filter4, .filter5, .filter6{
+  list-style: none;
+  background: #eee;
+  padding: 12px 30px;
+  margin: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: auto;
+}
+
+.cursor{
+  cursor: pointer;
+}

@@ -1,0 +1,60 @@
+.footer h1{
+  display: block;
+  color: #fff;
+  border-bottom: 5px solid #ff5e00;
+}
+
+.footer p{
+  display: block;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.quick-links h1{
+  display: block;
+  color: #fff;
+  border-bottom: 5px solid #ff5e00;
+}
+
+.quick-links ul li a{
+  display: block;
+  color: #fff;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+
+.quick-links ul li a:hover{
+  color: #ff5e00;
+}
+
+.fa-youtube{
+  color: #f00;
+}
+
+.fa-facebook-f{
+  color: #3b5999;
+}
+
+.fa-twitter{
+  color: #55acee;
+}
+
+.fa-instagram{
+  color: #e4405f;
+}
+
+.width-50{
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.width-50:hover{
+  transform: scale(1.25);
+}

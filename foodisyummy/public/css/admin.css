@@ -1,0 +1,186 @@
+@import url(recipes.css);
+
+body{
+  display: block;
+  min-height: 90vh;
+  padding: 0 10vw;
+  position: relative;
+  font-family: Poppins;
+}
+
+.logo{
+  margin: 20px auto 50px;
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+.tag{
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000;
+  left: 10px;
+  top: 10px;
+}
+
+/* product listing */
+.add-video{
+  width: 100%;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.add-video-title{
+  text-transform: capitalize;
+  color: #000;
+  font-weight: 500;
+}
+
+.add-btn{
+  width: 200px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  background: #ff5e00;
+  padding: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.no-video{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.no-video-txt{
+  display: block;
+  margin: 40px 0;
+  text-transform: capitalize;
+  color: #3f3d56;
+}
+
+.container{
+  width: 250px;
+  height: 200px;
+}
+
+.thumbnail{
+  width: 250px;
+}
+
+.container:hover{
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container:hover .card-action-btn{
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* action buttons */
+.card-action-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  transition: .5s;
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-action-btn img{
+  height: 18px;
+}
+
+.open-btn{
+  right: 60px;
+}
+
+.delete-popup-btn{
+  right: 110px;
+  background: #f25252;
+}
+
+.hide{
+  display: none;
+}
+
+/* delete alert */
+.delete-alert{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert{
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 15px;
+}
+
+.close-btn{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn i{
+  font-size: 18px;
+}
+
+.delete-svg{
+  height: 60px;
+  display: block;
+  margin: 20px auto;
+}
+
+.text{
+  color: #000;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.delete-btn{
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  background: #f25252;
+  margin: 15px auto 0;
+  display: block;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  color: #fff;
+}

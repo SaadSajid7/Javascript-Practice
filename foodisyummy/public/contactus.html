@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIY - Contact Us</title>
+  <link rel="stylesheet" href="css/contactus.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="alert-box">
+    <img src="img/cross.png" class="alert-img" />
+    <p class="alert-msg">Error message</p>
+  </div>
+
+  <form id="contact-form">
+    <div class="contact-form">
+      <h1>Contact Form</h1>
+      <div class="name">
+        <div>
+          <label for="f-name">First Name</label>
+          <input type="text" id="f-name" autocomplete="off">
+        </div>
+        <div>
+          <label for="l-name">Last Name</label>
+          <input type="text" id="l-name" autocomplete="off">
+        </div>
+      </div>
+      <label for="email">Email</label>
+      <div class="disabled-email">
+        <input type="email" id="email" autocomplete="off">
+      </div>
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" autocomplete="off">
+      <label for="message">Message</label> <br>
+      <div class="textarea">
+        <textarea id="message" onkeyup="charCount();" maxlength="150" autocomplete="off"></textarea>
+        <span id="message_count">0/150 (Max Charecters 150)</span>
+      </div>
+      <button id="send-btn">Send</button>
+    </div>
+  </form>
+
+  <footer></footer>
+
+  <script src="js/footer.js"></script>
+  <script src="js/contactus.js"></script>
+  <script src="js/token.js"></script>
+  <script src="https://kit.fontawesome.com/a27ca3d52c.js" crossorigin="anonymous"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+</body>
+</html>

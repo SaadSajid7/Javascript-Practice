@@ -1,0 +1,83 @@
+*{
+  box-sizing: border-box;
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #a0a0a0;
+  border-radius: 50px;
+  transition: .5s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #ff8640;
+}
+
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.myBtn{
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.offcanvas-lg{
+  width: 100%;
+}
+
+.navbar-links {
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+a{
+  color: #5e5e5e;
+  position: relative;
+  text-decoration: none;
+}
+
+.links:hover{
+  color: #ff5e00;
+  transition: .5s;
+}
+
+.active{
+  color: #ff5e00 !important;
+}
+
+.active:hover::after{
+  width: 90%;
+}
+
+.active::after{
+  content: "";
+  position: absolute;
+  background-color: #ff5e00;
+  height: 3px;
+  width: 90%;
+  border-radius: 50px;
+  left: 3px;
+  bottom: -5px;
+}
+
+@media screen and (max-width: 425px){
+  .offcanvas-lg{
+    width: 85% !important;
+  }
+}
+
+.bg-color{
+  color: #fff;
+  background: #ff5e00;
+}

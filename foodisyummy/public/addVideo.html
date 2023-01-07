@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Recipe</title>
+  <link rel="stylesheet" href="css/addVideo.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+  
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="alert-box">
+    <img src="img/cross.png" class="alert-img" />
+    <p class="alert-msg">Error message</p>
+  </div>
+
+  <div class="form">
+    <input type="text" id="video-name" placeholder="Video Name">
+    <input type="text" id="video-thumb" placeholder="Thumbnail link">
+    <input type="text" id="video-iframe" placeholder="Iframe">
+    <input type="text" id="video-ing" placeholder="Ingredients">
+    <input type="text" id="video-dir" placeholder="Directions">
+    <input type="text" id="video-tag" placeholder="Tags">
+    <div>
+      <button id="add-btn">Add Video</button>
+    </div>
+  </div>
+
+  <script src="js/token.js"></script>
+  <script type="module" src="js/addVideo.js"></script>
+</body>
+</html>
