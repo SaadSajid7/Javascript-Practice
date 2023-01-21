@@ -5,7 +5,7 @@ const createNav = () => {
   <nav class="navbar navbar-expand-lg sticky-top shadow bg-white">
     <div class="container-fluid">
       <a class="navbar-brand links" href="./index.html" >
-        <img src="../img/logo.png" alt="logo" class="logo" style="height: 50px; width: auto" />
+        <img src="./img/logo.png" alt="logo" class="logo" style="height: 50px; width: auto" />
       </a>
       <button
         class="fa-solid fa-bars navbar-btn navbar-toggler"
@@ -24,7 +24,7 @@ const createNav = () => {
           <h5
             class="offcanvas-title" id="offcanvasResponsiveLabel"
           >
-            <img src="../img/logo.png" alt="" style="height: 30px; width: auto" />
+            <img src="./img/logo.png" alt="" style="height: 30px; width: auto" />
           </h5>
           <button
             type="button"
