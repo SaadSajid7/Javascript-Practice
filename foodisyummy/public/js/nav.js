@@ -42,7 +42,7 @@ const createNav = () => {
               data-bs-target="#offcanvasResponsive"
             >
               <a
-                class="navbar-links links active"
+                class="navbar-links links"
                 aria-current="page"
                 href="./index.html"
               >
@@ -94,14 +94,6 @@ const createNav = () => {
 
 createNav();
 
-//Changing Active
-const active = document.getElementsByClassName("active");
-const activePage = window.location.pathname;
-const as = document.querySelectorAll(".link").forEach((link) => {
-  if (link.href.includes(`${activePage}`)) {
-    link.classList.add("active");
-  }
-});
 
 function loggedInOrNot() {
   let user = sessionStorage.user;

@@ -54,7 +54,7 @@ const createFooter = () => {
     </div>
   </div>
   <div>
-    <p class="text-center m-md-4 m-3">&copy; Copyright 2022 foodisyummy.com, All Right Reserved.</p>
+    <p class="text-center p-md-4 p-3 bg-white mb-0">&copy; Copyright 2022 foodisyummy, All Right Reserved.</p>
   </div>
   `;
 };
